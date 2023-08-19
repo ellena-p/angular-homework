@@ -1,0 +1,31 @@
+<br />
+<div class="sorting">
+  <label for="sortModel"> Sort by Model:</label>
+  <select id="sortModel"  [(ngModel)]="sortModel">
+    <option value="asc">Ascending</option>
+    <option value="desc">Descending</option>
+  </select>
+</div>
+
+<section class="container">
+  <div class="carCard" *ngFor="let car of cars| sortOptions : sortModel">
+    <div class="subCard"
+    >
+      <img class="images" src="{{ car.image }}" />
+      <h4>Model: {{ car.model }}</h4>
+      <p>Engine type:{{ car.engineType }}</p>
+      <p>Production year: {{ car.yearOfProduction }}</p>
+      <p>Price: {{ car.priceToRent }} mkd</p>
+      <span>
+        <label id="available" *ngIf="!car.isRented">Available</label></span
+      >
+      <span>
+        <label id="unavailable" *ngIf="car.isRented">Unavailable</label></span
+      >
+      <div>
+        <button (click)="rentCar(car.id)" *ngIf="!car.isRented">Rent</button>
+        <button (click)="returnCar(car.id)" *ngIf="car.isRented">Return</button>
+      </div>
+    </div>
+  </div>
+</section>
