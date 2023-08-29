@@ -1,0 +1,37 @@
+<header>
+    <div class="title">
+        <h1>{{ title }}</h1>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a
+                routerLink="/"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                >Home</a>
+            </li>
+    
+            <li>
+                <a
+                routerLink="/about"
+                routerLinkActive="active"
+                >About</a>
+            </li>
+            <li>
+                <a
+                routerLink="/products"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                >Products</a>
+            </li>
+            <li>
+                <a
+                routerLink="/orders"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                >Orders</a>
+            </li>
+        </ul>
+    </nav>
+</header>
