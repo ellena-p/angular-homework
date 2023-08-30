@@ -8,6 +8,8 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { AboutComponent } from './components/about/about.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { AddProductComponent } from './components/add-product/add-product.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,11 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     OrdersComponent,
     AboutComponent,
     HomeComponent,
-    NavigationComponent
+    NavigationComponent,
+    AddProductComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

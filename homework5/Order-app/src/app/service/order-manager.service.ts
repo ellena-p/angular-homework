@@ -68,4 +68,15 @@ export class OrderManagerService {
       this.allOrders.next(this._orders);
     }
   }
+
+  addProduct(createProduct: Product) {
+    this._products = [
+      ...this._products,
+      {
+        ...createProduct,
+      },
+    ];
+
+    this.allProducts.next(this._products);
+  }
 }
