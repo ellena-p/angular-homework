@@ -1,0 +1,29 @@
+<section class="container">
+  <div class="carCard" *ngFor="let product of products">
+    <div class="subCard">
+      <h2 class="name">{{ product.name }}</h2>
+      <h4>Description: {{ product.description }}</h4>
+      <p>Category: {{ product.category }}</p>
+      <p>Stock: {{ product.stock }}</p>
+      <p>Price: {{ product.price |currency:'EUR':'symbol'  }}</p>
+      <span>
+        <label id="available" *ngIf="product.stock > 0">Available</label></span
+      >
+      <span>
+        <label id="unavailable" *ngIf="product.stock === 0"
+          >Unavailable</label
+        ></span
+      >
+      <br />
+      <div>
+        <button
+        (click)="onBuyProduct(product.id)"
+          id="buybutton"
+          *ngIf="product.stock > 0"
+        >
+          Buy
+        </button>
+      </div>
+    </div>
+  </div>
+</section>

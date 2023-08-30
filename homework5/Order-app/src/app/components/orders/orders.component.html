@@ -1,0 +1,13 @@
+<h2>Orders list</h2>
+<section class="container">
+<div class="carCard" *ngFor="let order of orders">
+    <div class="subCard">
+      <h2 class="name">{{ order.name }}</h2>
+      <h4>Description: {{ order.description }}</h4>
+      <p>Price per unit: {{ order.pricePerQuantity |currency:'EUR':'symbol' }}</p>
+      <p>Quantity: {{ order.quantity }}</p>
+      <p>Total price: {{ order.totalPrice |currency:'EUR':'symbol' }} </p>
+    </div>
+</div>
+</section>
+
